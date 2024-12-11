@@ -3,7 +3,11 @@ import { create } from 'express-handlebars';
 import './config/config';
 import router from './routes';
 
-const exphb = create({ defaultLayout: false });
+const exphb = create({
+  defaultLayout: 'main',
+  layoutsDir: './src/views/layouts',
+  partialsDir: './src/views/partials',
+});
 const app = express();
 
 app.engine('handlebars', exphb.engine);
