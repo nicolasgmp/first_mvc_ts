@@ -1,5 +1,4 @@
 import { Kysely, sql } from 'kysely';
-import { Task } from '../../models/task.model';
 
 export async function up(db: Kysely<any>): Promise<void> {
   await db.schema

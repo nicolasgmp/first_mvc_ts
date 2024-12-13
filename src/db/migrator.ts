@@ -1,8 +1,6 @@
 import { readdirSync } from 'fs';
-import { db } from './conn';
-import * as CreateTasksTable from './migrations/01-CREATE-TASKS-TABLE';
 import path from 'path';
-import { randomInt } from 'crypto';
+import { db } from './conn';
 
 const migrationsPath = path.join(__dirname, './migrations');
 

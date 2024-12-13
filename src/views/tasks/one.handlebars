@@ -1,0 +1,28 @@
+<h1>Detalhes da Task</h1>
+<ul class='task-list'>
+  <li>
+    <p class='title'>Título: {{task.title}}</p>
+    <p class='description'>Descrição: {{task.description}}</p>
+    <p class='status'>
+      Status:
+      {{#if task.done}}
+        <span class='done'>Feito</span>
+      {{else}}
+        <span class='todo'>A Fazer</span>
+      {{/if}}
+    </p>
+    <div class='actions'>
+      <form action='/v1/tasks/complete/{{task.id}}' method='post'>
+        <input type='hidden' name='id' value='{{task.id}}' />
+        <button type='submit'>
+          <i class='bi bi-check2'></i>
+        </button>
+      </form>
+      <form action='/v1/tasks/edit/{{task.id}}' method='get'>
+        <button type='submit'>
+          <i class='bi bi-pencil-square'></i>
+        </button>
+      </form>
+    </div>
+  </li>
+</ul>

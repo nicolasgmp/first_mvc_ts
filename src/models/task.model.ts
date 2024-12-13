@@ -1,10 +1,10 @@
 import { UUID } from 'crypto';
-import { Generated } from 'kysely';
+import { Generated, Insertable, Selectable, Updateable } from 'kysely';
 
-export interface Task {
-  id: string;
+export interface TaskTable {
+  id?: string;
   title: string;
   description: string;
-  done: boolean;
-  createdAt: Date;
+  done?: boolean;
+  createdAt?: Date;
 }

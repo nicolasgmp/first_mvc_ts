@@ -1,1 +1,41 @@
 <h1>Todas as Tasks</h1>
+<ul class='task-list'>
+  {{#each tasks}}
+    <li>
+      <div class='texts'>
+        <form action='/v1/tasks/one/{{this.id}}' method='get'>
+          <button type='submit' class='all-title'>
+            <p class='title'>{{this.title}}</p>
+          </button>
+        </form>
+      </div>
+      <p class='status'>
+        Status:
+        {{#if this.done}}
+          <span class='done'>Feito</span>
+        {{else}}
+          <span class='todo'>A Fazer</span>
+        {{/if}}
+      </p>
+      <div class='actions'>
+        <form action='/v1/tasks/complete/{{this.id}}' method='post'>
+          <input type='hidden' name='id' value='{{this.id}}' />
+          <button type='submit'>
+            <i class='bi bi-check2'></i>
+          </button>
+        </form>
+        <form action='/v1/tasks/edit/{{this.id}}' method='get'>
+          <button type='submit'>
+            <i class='bi bi-pencil-square'></i>
+          </button>
+        </form>
+        <form action='/v1/tasks/remove' method='post'>
+          <input type='hidden' name='id' value='{{this.id}}' />
+          <button type='submit'>
+            <i class='bi bi-x-lg'></i>
+          </button>
+        </form>
+      </div>
+    </li>
+  {{/each}}
+</ul>

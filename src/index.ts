@@ -17,7 +17,7 @@ app.set('views', './src/views');
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static('public'));
+app.use(express.static('./src/public'));
 
 app.use(router);
 

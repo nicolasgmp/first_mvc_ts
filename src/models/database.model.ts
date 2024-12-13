@@ -1,7 +1,7 @@
 import { Migration } from './migration.model';
-import { Task } from './task.model';
+import { TaskTable } from './task.model';
 
 export interface Database {
-  tasks: Task;
+  tasks: TaskTable;
   migrations: Migration;
 }
